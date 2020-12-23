@@ -3,6 +3,8 @@
     MinStack1: 第一种设计方案，stackData每压入1个元素，都压入该次对应的最小元素到stackMin
     MinStack2: 第二种设计方案，stackData每压入1个元素，如果压入元素是压入后最小的元素，才压入到stackMin
 """
+
+
 class MinStack1(object):
     def __init__(self):
         self.stackData = []

@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class BubbleSort {
     // 方式1: (外层索引从末尾开始取)外层索引 i 依次递减，内层索引递增 i
-    public static void bubbleSort(int[] arr) {
+    public static void bubbleSort_1(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
         }
@@ -16,7 +16,7 @@ public class BubbleSort {
     }
 
     // 方式2: (外层索引从0开始取)外层索引 i 依次递增，内层索引递增到 arr.length - i - 2
-    public static void bubbleSort(int[] arr) {
+    public static void bubbleSort_2(int[] arr) {
         if (arr = null || arr.length < 2){
             return;
         }

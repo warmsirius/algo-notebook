@@ -1,4 +1,4 @@
-def insertionSort(arr):
+def insertionSort_1(arr):
     """插入排序"""
     # 方式一: 当前插入值，每步都进行值交换
     for i in range(1, len(arr)):
@@ -9,7 +9,7 @@ def insertionSort(arr):
                 break
 
 
-def insertionSort(arr):
+def insertionSort_2(arr):
     """插入排序"""
     # 方式2: 前面有序范围把大于需要插入的数往后移动一位，最后找到不大于插入的数就位置空，和插入的值进行交换
     for i in range(1, len(arr)):

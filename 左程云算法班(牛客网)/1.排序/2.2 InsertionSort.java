@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class InsertionSort{
     // 方式1: 当前插入值，每步都进行值交换
-    public static void insertionSort(int[] arr){
+    public static void insertionSort_1(int[] arr){
         if (arr == null || arr.length < 2){
             return ;
         }
@@ -15,7 +15,7 @@ public class InsertionSort{
     }
 
      //方式2: 前面有序范围把大于需要插入的数往后移动一位，最后找到不大于插入的数就位置空，和插入的值进行交换
-     public static void insertionSort(int[] arr){
+     public static void insertionSort_2(int[] arr){
         if (arr == null || arr.length < 2){
             return ;
         }

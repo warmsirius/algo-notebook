@@ -1,4 +1,4 @@
-def bubbleSort(arr):
+def bubbleSort_1(arr):
     """冒泡排序"""
     # 方式1: (外层索引从末尾开始取)外层索引 i 依次递减，内层索引递增 i
     n = len(arr)
@@ -8,7 +8,7 @@ def bubbleSort(arr):
                 swap(arr, j, j + 1)
 
 
-def bubbleSort(arr):
+def bubbleSort_2(arr):
     """冒泡排序"""
     # 方式2: (外层索引从0开始取)外层索引 i 依次递增，内层索引递增到 arr.length - i - 2
     n = len(arr)

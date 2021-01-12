@@ -42,4 +42,25 @@ def getNextArray(str2):
     return nextArray
 
 
-print(KMP("abcabcdabcde", "abcde"))
+# print(KMP("abcabcdabcde", "abcde"))
+
+def func1(a, b):
+    return a + b
+
+map = {"abc": func1}
+
+
+def work(type, a, b):
+    return map[type](a, b)
+
+
+from unittest import mock
+def test_work():
+    func1 = mock.Mock(side_effect=[1, 1])
+    assert work("abc", 1, 1) == 1
+
+
+
+test_work()
+
+

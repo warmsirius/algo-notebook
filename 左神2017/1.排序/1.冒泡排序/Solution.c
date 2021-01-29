@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void) {
-    //冒泡排序，升序
+    //冒泡排序(升序)
     int a[] = {5, 4, 3, 2, 0, 1};
     int n; //存放数组a中元素的个数
     int i; //比较的轮数

@@ -5,7 +5,6 @@ def getMaxWindow(arr, w):
     """生成窗口最大值数组"""
     if arr == [] or w < 1 or len(arr) < w:
         return None
-    import pdb; pdb.set_trace()
     # 双端队列: qmax，记录每个窗口的最大值下标
     qmax = deque()
     res = [0] * (len(arr) - w + 1)

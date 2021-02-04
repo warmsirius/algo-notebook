@@ -1,11 +1,13 @@
 class MyStack1(object):
-    """方案一代码"""
-
+    """方案一: 每一步都压入，每一步都弹出"""
     def __init__(self):
+        # 维护2个栈，1个数据栈，1个最小值栈
         self._stackData = []
         self._stackMin = []
 
     def push(self, newNum):
+        # 每一步都压入当前栈最小值
+        # 比较newNum 和 当前栈最小值，压入较小的那个值
         if not self._stackMin:
             self._stackMin.append(newNum)
         elif self.getMin() >= newNum:
@@ -16,6 +18,7 @@ class MyStack1(object):
         self._stackData.append(newNum)
 
     def pop(self) -> int:
+        # 每一步都弹出栈的最小值
         if self._stackData:
             self._stackMin.pop()
             return self._stackData.pop()
@@ -30,13 +33,14 @@ class MyStack1(object):
 
 
 class MyStack2(object):
-    """方案二代码"""
-
+    """方案二: 每一步只压入不大于当前栈的值，每一步弹出也只弹出不大于当前栈的值"""
     def __init__(self):
+        # 维护2个栈，1个数据栈，1个最小值栈
         self._stackData = []
         self._stackMin = []
 
     def push(self, newNum):
+        # newNum小于或等于栈当前最小值，压入
         if not self._stackMin:
             self._stackMin.append(newNum)
         elif self.getMin() >= newNum:
@@ -47,6 +51,7 @@ class MyStack2(object):
         self._stackData.append(newNum)
 
     def pop(self) -> int:
+        # newNum小于或等于栈当前最小值，弹出
         if self._stackData:
             v = self._stackData.pop()
             if v == self.getMin():

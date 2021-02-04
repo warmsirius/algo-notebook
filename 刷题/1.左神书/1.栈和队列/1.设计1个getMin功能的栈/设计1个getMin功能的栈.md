@@ -7,20 +7,20 @@
 1颗星
 
 ## 要求
-1.`pop`、`push`、`getMin`操作的时间复杂度都是 O(1)
-2.设计的栈类型可以使用现成的栈结构
+* 1.`pop`、`push`、`getMin`操作的时间复杂度都是 O(1)
+* 2.设计的栈类型可以使用现成的栈结构
 
 
-## 思路
-维护2个栈: `stackData`、`stackMin`
+##  解题思路
+首先一定需要维护2个栈: `stackData`、`stackMin`
 * `stackData`: 保存原始栈列数值
 * `stackMin`: 保存最小栈列数值
 
-### 思路1
+### 压入弹出策略1
 * 每次 `push` newNum 到 `stackData`，获取 minNum = Min(newNum, 当前最小值)，minNum入栈
 * 每次 `pop`，`stackData` 和 `stackMin` 分别弹出元素 
 
-### 思路2
+### 压入弹出策略2
 * 每次 `push` 数字 newNum 到 `stackData`:
     * 如果 newNum <= 当前的最小值，则newNum入栈
     * 否则不处理

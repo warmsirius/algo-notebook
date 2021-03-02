@@ -5,7 +5,7 @@ class Node(object):
 
 
 def merge_two_lists(head1: Node, head2: Node):
-    """合并两个有序链表"""
+    """合并两个有序链表，新增链表结构"""
     # 哨兵节点:
     # 好处1: 便于快速找到头节点
     # 好处2: 省去处理 pre_node is None的情况
@@ -25,3 +25,27 @@ def merge_two_lists(head1: Node, head2: Node):
     pre_node.next = head1 if head1 else head2
 
     return pre_head.next
+
+
+def merge_two_list_2(head1: Node, head2: Node):
+    """原链表基础上进行合并"""
+    if head1 is None or head2 is None:
+        return head1 if head2 is None else head2
+
+    head = head1 if head1.value < head2.value else head2
+    cur1 = head1 if head == head1 else head2
+    cur2 = head2 if head == head1 else head1
+    pre = None
+
+    while cur2 is not None and cur1 is not None:
+        if cur1.value <= cur2.value:
+            pre = cur1
+            cur1 = cur1.next
+        else:
+            next = cur2.next
+            pre.next = cur2
+            cur2.next = cur1
+            pre = cur2
+            cur2 = next
+    pre.next = cur2 if cur1 is None else cur1
+    return head

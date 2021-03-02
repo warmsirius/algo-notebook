@@ -54,7 +54,7 @@ def process(head: Node):
     head.left = left_list.end
     head.right = right_list.start
     
-    if right_list.start is None:
+    if right_list.start is not None:
         right_list.start.left = head
 
     return RetrunType(left_list.start if left_list.start is not None else head,
